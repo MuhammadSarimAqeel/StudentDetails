@@ -1,0 +1,41 @@
+
+<div class="col-md-6 offset-md-3 " >
+  <div class="card mt-4 p-5" style="background-color: #e2e2e2;">
+<h3 class="text-center my-4">Update Student Details</h3>
+<form (ngSubmit)="onsubmit()">
+<div class="from-group my-2">
+  <label>
+      First Name
+  </label>
+  <input type="text" class="form-control" placeholder="Enter first name here" id="firstname" [(ngModel)]="student.firstname" name="firstname">
+</div>
+<div class="from-group my-2">
+  <label>
+     Last Name
+  </label>
+  <input type="text" class="form-control" placeholder="Enter last name here" id="lastname" [(ngModel)]="student.lastname" name="lastname">
+</div>
+<div class="from-group my-2">
+  <label>
+    Email
+  </label>
+  <input type="email" class="form-control" placeholder="Enter email here" id="email" [(ngModel)]="student.email" name="email">
+</div>
+<div class="from-group my-2">
+  <label>
+    Year
+  </label>
+  <input type="text" class="form-control" placeholder="Enter Year here" id="year" [(ngModel)]="student.year" name="year">
+</div>
+<div class="from-group my-2">
+  <label>
+    Program
+  </label>
+  <input type="text" class="form-control" placeholder="Enter program here" id="program" [(ngModel)]="student.program" name="program">
+</div>
+<div class="container mt-4 text-center">
+<button class="btn btn-success " type="submit">Update</button>
+</div>
+</form>
+</div>
+</div>

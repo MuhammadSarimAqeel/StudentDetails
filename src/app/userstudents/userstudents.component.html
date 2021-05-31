@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #e3f2fd;">
+  
+  <a class="navbar-brand " style="color: white; margin-left: 550px;">StudentDetails</a>
+ 
+
+  <button (click)="logout()" class="btn btn-primary" style="margin-left: 550px;">Logout</button>
+</nav>
+
+<div class="container">
+<input class="form-control me-2 mt-3 mr-2" [(ngModel)]="firstName" (ngModelChange)="search()" name="firstname" id="firstname" type="search" placeholder="Search Employee here" aria-label="Search">
+
+<table class="table table-bordered mt-2">
+<thead class="thead-light">
+<tr>
+    
+<th scope="col">First name</th>
+<th scope="col">Last name</th>
+<th scope="col">Email</th>
+<th scope="col">Year</th>
+<th scope="col">Program</th>
+<th scope="col">Actions</th>
+</tr>
+
+</thead>
+<tbody>
+    
+<tr *ngFor = "let student of students  "   >
+   
+<td (click)="viewstudent(student.id)" >{{student.firstname}}</td>
+<td (click)="viewstudent(student.id)" >{{student.lastname}}</td>
+<td (click)="viewstudent(student.id)" >{{student.email}}</td>
+<td (click)="viewstudent(student.id)" >{{student.year}}</td>
+<td (click)="viewstudent(student.id)">{{student.program}}</td>
+<td>
+    <button (click)="viewstudent(student.id)"  class="btn btn-info mr-2">View</button>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>

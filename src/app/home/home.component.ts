@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentdataService } from '../studentdata.service';
 import { Student } from './student';
@@ -13,9 +13,18 @@ export class HomeComponent implements OnInit {
   student:Student = new Student();
 firstName:any;  
 
-  constructor(private studentservice:StudentdataService, private router:Router) { }
+  constructor(private studentservice:StudentdataService, private router:Router, private zone:NgZone) { }
 
   ngOnInit(): void {
+    this.zone.run(() => {
+    setTimeout(() => {
+      localStorage.removeItem('auth');
+      this.router.navigate(['/login']);
+      console.log("in time");
+      
+    }, 3000);
+  });
+  
     this.getstudents();
   }
   private getstudents(){

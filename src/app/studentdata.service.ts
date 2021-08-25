@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Student } from './home/student';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class StudentdataService {
   Pass:string;
 
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private router:Router) {
   
    }
 
@@ -36,6 +37,7 @@ this.UserName=username;
 this.Pass=password;
     localStorage.setItem("auth", authdata);
   
+   
       this.getuserdetails().subscribe(data=>{
        this.user= data;
       }, error=> console.log(error));
